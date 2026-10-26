@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Algoritmos - Programación y Literatura</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Laboratorio de Algoritmos Interactivos</h1>
+      <p>Resolución de problemas científicos y relatos de <em>El Hombre que Calculaba</em></p>
+    </header>
+
+    <!-- Botones de Pestañas -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" data-module="mod1">Módulo 1: Matemáticas</button>
+      <button class="tab-btn" data-module="mod2">Módulo 2: El Hombre que Calculaba</button>
+    </div>
+
+    <!-- MÓDULO 1 -->
+    <div id="mod1" class="module active">
+      
+      <div class="card">
+        <h2>Ejercicio 1: Raíces de una Ecuación Cuadrática</h2>
+        <div class="section-desc">
+          <strong>a) Descripción del problema:</strong> Dado un polinomio de segundo grado ax² + bx + c = 0, calcular el discriminante D = b² - 4ac y evaluar sus raíces.
+        </div>
+        <div class="algorithm-box">
+          <strong>b) Algoritmo:</strong>
+          <ol>
+            <li>Leer los coeficientes a, b y c desde el formulario.</li>
+            <li>Calcular el discriminante: D = (b × b) - (4 × a × c).</li>
+            <li>Si D > 0, calcular las dos raíces reales.</li>
+            <li>Si D = 0, calcular la raíz única.</li>
+            <li>Si D < 0, mostrar que no tiene raíces reales.</li>
+          </ol>
+        </div>
+
+        <div class="form-group">
+          <label for="eq_a">Coeficiente a:</label>
+          <input type="number" id="eq_a" class="form-control" value="1" step="any">
+        </div>
+        <div class="form-group">
+          <label for="eq_b">Coeficiente b:</label>
+          <input type="number" id="eq_b" class="form-control" value="6" step="any">
+        </div>
+        <div class="form-group">
+          <label for="eq_c">Coeficiente c:</label>
+          <input type="number" id="eq_c" class="form-control" value="3" step="any">
+        </div>
+        <button id="btn_ej1" class="btn-action">Calcular Raíces</button>
+
+        <div id="res_ej1" class="result-box">
+          <h4>d) Salida esperada del programa:</h4>
+          <code id="code_ej1"></code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ejercicio 2: Estimación del Número π mediante Serie</h2>
+        <div class="section-desc">
+          <strong>a) Descripción del problema:</strong> Aproximar el valor de π utilizando la sumatoria iterativa π ≈ √(6 × Σ(1/n²)).
+        </div>
+        <div class="algorithm-box">
+          <strong>b) Algoritmo:</strong>
+          <ol>
+            <li>Leer el entero N suministrado por el usuario.</li>
+            <li>Inicializar una variable acumuladora <code>suma = 0</code>.</li>
+            <li>Ejecutar un bucle desde i = 1 hasta N, acumulando 1 / (i × i).</li>
+            <li>Calcular la estimación y comparar contra Math.PI.</li>
+          </ol>
+        </div>
+
+        <div class="form-group">
+          <label for="pi_n">Número de términos (N):</label>
+          <input type="number" id="pi_n" class="form-control" value="1000" min="1">
+        </div>
+        <button id="btn_ej2" class="btn-action">Calcular Estimación de Pi</button>
+
+        <div id="res_ej2" class="result-box">
+          <h4>d) Salida esperada del programa:</h4>
+          <code id="code_ej2"></code>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MÓDULO 2 -->
+    <div id="mod2" class="module">
+
+      <div class="card">
+        <h2>Ejercicio 3: La Herencia de los Camellos (Capítulo III)</h2>
+        <div class="section-desc">
+          <strong>a) Descripción del problema:</strong> Simular el reparto clásico de camellos entre tres hermanos con fracciones 1/2, 1/3 y 1/9, agregando un camello prestado.
+        </div>
+        <div class="algorithm-box">
+          <strong>b) Algoritmo:</strong>
+          <ol>
+            <li>Obtener la cantidad inicial de camellos C.</li>
+            <li>Añadir 1 camello prestado: C_total = C + 1.</li>
+            <li>Calcular las porciones y el sobrante devuelto.</li>
+          </ol>
+        </div>
+
+        <div class="form-group">
+          <label for="camellos_total">Total de camellos heredados:</label>
+          <input type="number" id="camellos_total" class="form-control" value="38" min="1">
+        </div>
+        <button id="btn_ej3" class="btn-action">Resolver Reparto de Camellos</button>
+
+        <div id="res_ej3" class="result-box">
+          <h4>d) Salida esperada del programa:</h4>
+          <code id="code_ej3"></code>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ejercicio 4: El Reparto de los 8 Panes (Capítulo IV)</h2>
+        <div class="section-desc">
+          <strong>a) Descripción del problema:</strong> Calcular el pago justo de monedas de oro (valores enteros) entre dos viajeros que aportan panes para compartir con un tercer viajero.
+        </div>
+        <div class="algorithm-box">
+          <strong>b) Algoritmo:</strong>
+          <ol>
+            <li>Leer panes del Viajero A (P_a), Viajero B (P_b) y monedas (M).</li>
+            <li>Calcular tercios consumidos y determinar la entrega neta de cada viajero al Jeque.</li>
+            <li>Repartir las monedas enteras en proporción directa a los tercios entregados.</li>
+          </ol>
+        </div>
+
+        <div class="form-group">
+          <label for="panes_a">Panes aportados por Viajero A:</label>
+          <input type="number" id="panes_a" class="form-control" value="5" min="1" step="1">
+        </div>
+        <div class="form-group">
+          <label for="panes_b">Panes aportados por Viajero B:</label>
+          <input type="number" id="panes_b" class="form-control" value="3" min="1" step="1">
+        </div>
+        <div class="form-group">
+          <label for="monedas">Monedas de oro en pago:</label>
+          <input type="number" id="monedas" class="form-control" value="8" min="1" step="1">
+        </div>
+        <button id="btn_ej4" class="btn-action">Calcular Reparto Justo</button>
+
+        <div id="res_ej4" class="result-box">
+          <h4>d) Salida esperada del programa:</h4>
+          <code id="code_ej4"></code>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Página desarrollada con JavaScript Vanilla y CSS Modular</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
